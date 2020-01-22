@@ -1,5 +1,10 @@
 plugins {
-    id 'java-library'
+    id 'java'
+    id 'application'
+}
+
+application {
+    mainClassName = 'csci2020u.lab02.SimpleTest'
 }
 
 java {
@@ -7,4 +12,12 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-version = '1.2.1'
+version = '0.1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	implementation 'org.apache.commons:commons-csv:1.7'
+}

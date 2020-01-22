@@ -1,16 +1,10 @@
-apply plugin: 'java'
-apply plugin: 'application'
-
-mainClassName = 'csci2020u.lab02.SimpleTest'
-
-repositories {
-    mavenCentral()
+plugins {
+    id 'java-library'
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
-jar {
-    baseName = 'lab02'
-    version =  '0.1.0'
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
+
+version = '1.2.1'

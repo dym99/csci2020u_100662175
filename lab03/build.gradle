@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+application {
+    mainClassName = 'csci2020u.lab03.CSVDemo'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	implementation 'org.apache.commons:commons-csv:1.7'
+}
+
+jar {
+  manifest {
+    attributes 'Main-Class': 'csci2020u.lab03.CSVDemo',
+          'Implementation-Title': 'Gradle-Demo',
+          'Implementation-Version': version
+  }
+}

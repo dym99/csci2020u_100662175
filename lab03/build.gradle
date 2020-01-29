@@ -1,3 +1,12 @@
+buildscript {
+  repositories {
+    flatDir dirs: 'proguard6.2.2/lib'
+  }
+  dependencies {
+    classpath ':proguard'
+  }
+}
+
 plugins {
     id 'java'
     id 'application'
@@ -28,4 +37,10 @@ jar {
           'Implementation-Title': 'Gradle-Demo',
           'Implementation-Version': version
   }
+}
+
+task (minify, dependsOn: 'jar', type: proguard.gradle.ProGuardTask) {
+  configuration 'proguard.cfg'
+  injars 'build/libs/lab03-1.0.0.jar'
+  outjars 'build/libs/lab03-1.0.0.min.jar'
 }
